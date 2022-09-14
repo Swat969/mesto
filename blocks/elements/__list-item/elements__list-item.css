@@ -1,0 +1,8 @@
+.elements__list-item {
+  max-width: 282px;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF;
+  overflow: hidden;
+  border-radius: 10px;
+}

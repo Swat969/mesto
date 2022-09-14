@@ -1,3 +1,18 @@
 .profile__info {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 18px;
+  row-gap: 16px;
+  justify-items: flex-start;
+  align-items: center;
+  grid-template-areas:
+    "name edit"
+    "job job";
+}
 
+@media screen and (max-width: 768px) {
+  .profile__info {
+    column-gap: 10px;
+    row-gap: 8px;
+  }
 }
