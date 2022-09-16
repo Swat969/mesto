@@ -18,8 +18,8 @@
     <section class="profile">
       <img class="profile__avatar" src="./images/profile/profile_image.png" alt="Аватар">
       <div class="profile__info">
-        <h1 class="profile__name">Жак-Ив Кусто</h1>
-        <p class="profile__job">Исследователь океана</p>
+        <h1 id="profile__name"  class="profile__name">Жак-Ив Кусто</h1>
+        <p id="profile__job"  class="profile__job">Исследователь океана</p>
         <button id="profile__edit-button" class="profile__edit-button" type="button"></button>
       </div>
       <button class="profile__add-button" type="button"></button>
@@ -74,6 +74,20 @@
   <footer class="footer">
     <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
   </footer>
+  <div id="popup" class="popup">
+    <div class="popup__container">
+      <button id="popup__close" type="button" class="popup__close-button"></button>
+      <h3 class="popup__title">Редактировать профиль</h3>
+      <form name="edit-form" id="popup__form" class="popup__form" action="#">
+        <fieldset class="popup__fieldset">
+          <input id="popup__name-input" class="popup__input" placeholder="Имя">
+          <input id="popup__job-input" class="popup__input" placeholder="Род занятий">
+          <button type="submit" id="popup__save-button" class="popup__save-button">Сохранить</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  <script src="./scripts/script.js"></script>
 </body>
 
 </html>
