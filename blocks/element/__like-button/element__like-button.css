@@ -1,4 +1,4 @@
-.elements__like {
+.element__like-button {
   background-image: url(../../../images/elements/like.svg);
   background-color: inherit;
   background-position: center;
@@ -11,6 +11,6 @@
   margin-left: 20px;
 }
 
-.elements__like:hover {
+.element__like-button:hover {
   opacity: .5;
 }
