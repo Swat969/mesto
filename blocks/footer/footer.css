@@ -8,6 +8,7 @@
 @media screen and (max-width: 880px) {
   .footer {
     width: calc(100% - 2*19px);
+    justify-content: center;
   }
 }
 
