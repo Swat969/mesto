@@ -2,7 +2,7 @@
 ------
 ## Описание проекта:
 
-Проектная работа Яндекс.Практикума на основе [макета](https://www.figma.com/file/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5?node-id=0%3A1)
+Проектная работа Яндекс.Практикума на основе [макета](https://www.figma.com/file/kRVLKwYG3d1HGLvh7JFWRT/JavaScript.-Sprint-6?node-id=0%3A1)
 
 ------
 ### Используемые технологии:
@@ -13,6 +13,8 @@
 * Grid Layout;
 * и д.р;
 3. JavaScript
+* Popups
+* FormValidation
 4. Figma
 ------
 ### Cсылка на проект:

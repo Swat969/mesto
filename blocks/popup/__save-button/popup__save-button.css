@@ -8,13 +8,22 @@
   border-radius: 2px;
   border: none;
   cursor: pointer;
-  margin: 48px 0 0;
+  margin: 28px 0 0;
   padding: 14px 0;
   transition: opacity 0.3s linear;
 }
 
 .popup__save-button:hover {
   opacity: 0.8;
+}
+
+.popup__save-button:active {
+  opacity: 0.5;
+}
+
+.popup__save-button:focus {
+  outline: none;
+  box-shadow: 1px 1px 10px #000;
 }
 
 @media screen and (max-width: 768px) {

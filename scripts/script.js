@@ -15,12 +15,17 @@ const placeName = popupPlace.querySelector('.popup__input_content_place-name');
 const imageUrl = popupPlace.querySelector('.popup__input_content_image-url');
 
 const editButton = document.querySelector('.profile__edit-button');
+const editSaveButton = popupProfileEdit.querySelector('.popup__save-button');
+
 const addButton = document.querySelector('.profile__add-button');
+const addSaveButton = popupPlace.querySelector('.popup__save-button');
 
 const formEdit = document.forms['profile_edit'];
 const formPlace = document.forms['new_place'];
 
 const popups = document.querySelectorAll('.popup');
+const errorMessages = document.querySelectorAll('.popup__form-input-error');
+const popupInputField = document.querySelectorAll('.popup__input')
 
 function openPopup(popup) {
   popup.classList.add('popup_open');
@@ -50,10 +55,17 @@ function openEditPopup() {
   openPopup(popupProfileEdit);
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
+  enableSubmitButton(editSaveButton);
+  disableErrorMessages();
+  disableErrorInput(popupInputField);
 }
 
 function openPlacePopup() {
   openPopup(popupPlace);
+  formPlace.reset();
+  disableSubmitButton(addSaveButton);
+  disableErrorMessages();
+  disableErrorInput(popupInputField);
 }
 
 function openImage(image, caption) {
@@ -75,6 +87,24 @@ function handlePlaceFormSubmit(evt) {
   renderCard(placeName.value, imageUrl.value);
   evt.target.reset();
   closePopup(popupPlace);
+}
+
+function enableSubmitButton(buttonElement) {
+  buttonElement.removeAttribute('disabled');
+  buttonElement.classList.remove('popup__save-button_disabled');
+}
+
+function disableSubmitButton(buttonElement) {
+  buttonElement.setAttribute('disabled', true);
+  buttonElement.classList.add('popup__save-button_disabled');
+}
+
+function disableErrorMessages() {
+  errorMessages.forEach(validMessage => validMessage.textContent = "");
+}
+
+function disableErrorInput(inputErrors) {
+  inputErrors.forEach(inputError => inputError.classList.remove('popup__input_error'));
 }
 
 editButton.addEventListener('click', openEditPopup);
@@ -136,3 +166,5 @@ function renderCard(name, link) {
 }
 
 initialCards.forEach((item) => renderCard(item.name, item.link));
+
+

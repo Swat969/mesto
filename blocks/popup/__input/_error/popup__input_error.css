@@ -1,0 +1,7 @@
+.popup__input_error {
+  border-color: #FF0000;
+}
+
+.popup__input_error:focus {
+  border-color: #FF0000;
+}
