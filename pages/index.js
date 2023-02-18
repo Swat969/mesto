@@ -1,5 +1,6 @@
-import { Card } from './Card.js';
-import { FormValidator } from './FormValidator.js';
+import { Card } from '../components/Card.js';
+import { FormValidator } from '../components/FormValidator.js';
+import Section from '../components/Section.js';
 
 const validateSettings = {
   formSelector: '.popup__form',
@@ -90,20 +91,20 @@ function handleProfileFormSubmit(evt) {
 
 function handlePlaceFormSubmit(evt) {
   evt.preventDefault();
-  cardsContainer.prepend(createCard({ name: placeName.value, link: imageUrl.value }));
+  renderedCard.renderItems({ name: placeName.value, link: imageUrl.value });
   evt.target.reset();
   closePopup(popupPlace);
 }
 
-function createCard(item) {
-  const cardElement = new Card(item, '#elementTemplate', handleCardClick).setData();
-  return cardElement;
-}
+const renderedCard = new Section({
+  items: initialCards,
+  renderer: (item) => {
+    const cardElement = new Card(item, '#elementTemplate', handleCardClick).setData();
+    renderedCard.addItem(cardElement);
+  }
+}, cardsContainer);
 
-initialCards.forEach(item => {
-  const card = createCard(item);
-  cardsContainer.prepend(card);
-});
+renderedCard.renderItems();
 
 buttonEditProfile.addEventListener('click', openEditPopup);
 buttonAddPlace.addEventListener('click', openPlacePopup);
