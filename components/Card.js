@@ -15,14 +15,26 @@ export class Card {
     return cardElements;
   }
 
+  _handleImageClick() {
+    this._handleCardClick.open(this._link, this._name);
+  }
+
+  _deleteCard() {
+    this._cardElement.remove();
+  }
+
+  _toggleLikeButton() {
+    this._likeButton.classList.toggle('element__like-button_active')
+  }
+
   _setEventListeners() {
     this._cardElementImage = this._cardElement.querySelector('.element__image');
     this._cardRemoveButton = this._cardElement.querySelector('.element__remove-button');
     this._likeButton = this._cardElement.querySelector('.element__like-button');
 
-    this._cardElementImage.addEventListener('click', () => this._handleCardClick(this._link, this._name));
-    this._cardRemoveButton.addEventListener('click', () => this._cardElement.remove());
-    this._likeButton.addEventListener('click', () => this._likeButton.classList.toggle('element__like-button_active'));
+    this._cardElementImage.addEventListener('click', () => this._handleImageClick());
+    this._cardRemoveButton.addEventListener('click', () => this._deleteCard());
+    this._likeButton.addEventListener('click', () => this._toggleLikeButton());
   }
 
   setData() {
